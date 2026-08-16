@@ -63,7 +63,7 @@ export function XiaohongshuArchive({ data }: { data: Archive }) {
 
   return <main id="top">
     <header className="masthead">
-      <div className="utility"><a className="brand" href="https://tbzarchive1206.github.io/tbzarchive/">THE BOYZ / FAN ARCHIVE</a><nav><span>XIAOHONGSHU MEDIA</span><span>/</span><a href="https://x.com/tbzarchive1206_" target="_blank" rel="noreferrer">TWITTER ↗</a></nav></div>
+      <div className="utility"><a className="brand" href="https://tbzarchive.com/">THE BOYZ / FAN ARCHIVE</a><nav><span>XIAOHONGSHU MEDIA</span><span>/</span><a href="https://x.com/tbzarchive1206_" target="_blank" rel="noreferrer">TWITTER ↗</a></nav></div>
       <h1><span className="solid">XIAOHONGSHU</span><span className="outline">MEDIA</span></h1>
       <div className="stats"><p><strong>{data.profiles.length + 1}</strong> COLLECTIONS</p><i /><p><strong>{totalMedia.toLocaleString("en-US")}</strong> MEDIA FILES</p><i /><p>UPDATED <strong>{new Date(data.generatedAt).toLocaleDateString("en-GB")}</strong></p></div>
     </header>
