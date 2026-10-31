@@ -1,3 +1,4 @@
+import { MemberName } from "./MemberName";
 import { useMemo, useState } from "react";
 
 type Media = {
@@ -70,7 +71,7 @@ export function XiaohongshuArchive({ data }: { data: Archive }) {
 
     {!collection ? <section className="member-picker insta-picker xhs-picker">
       <div className="picker-head"><p>SELECT A PROFILE · {data.profiles.length} PROFILES</p><a href={folderUrl(data.sourceFolderId)} target="_blank" rel="noreferrer">OPEN SOURCE FOLDER ↗</a></div>
-      <div className={`member-grid profile-count-${data.profiles.length}`}>{data.profiles.map((item, index) => <button key={item.id} onClick={() => chooseCollection(item)}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.name.toUpperCase()}</strong><small>{item.media.length.toLocaleString("en-US")} MEDIA FILES →</small></button>)}</div>
+      <div className={`member-grid profile-count-${data.profiles.length}`}>{data.profiles.map((item, index) => <button key={item.id} onClick={() => chooseCollection(item)}><span>{String(index + 1).padStart(2, "0")}</span><strong><MemberName name={item.name} /></strong><small>{item.media.length.toLocaleString("en-US")} MEDIA FILES →</small></button>)}</div>
       <button className="other-profile-tile" onClick={() => chooseCollection(data.special)}><span>{String(data.profiles.length + 1).padStart(2, "0")} / SPECIAL COLLECTION</span><strong>XHS POSTS RELATED TO TBZ</strong><em>THE BOYZ 相关小红书内容</em><small>{data.special.media.length.toLocaleString("en-US")} MEDIA FILES →</small></button>
     </section> : <section className="member-gallery insta-gallery">
       <header className="member-gallery-head"><button onClick={() => setCollection(null)}>← ALL PROFILES</button><div><span>XIAOHONGSHU MEDIA / PROFILE</span><h2>{collection.name.toUpperCase()}</h2></div><a href={folderUrl(collection.id)} target="_blank" rel="noreferrer">OPEN FOLDER ↗</a></header>
